@@ -22,6 +22,7 @@ class AmazonGoodsPipeline(object):
             _item['_id'] = _item['asin']
             try:
                 # asin作为主键,插入重复会报错
+                print(_item)
                 self.client.insert(_item)
             except Exception as err:
                 pass
